@@ -6,13 +6,13 @@
     <link rel="stylesheet" href="/public/styles.css" />
     <title>TailwindCSS</title>
   </head>
-  <body>
+  <body class="bg-white dark:bg-slate-900 font-main">
     <!-- обёртка для ширины экрана -->
-    <div class="max-w-screen-xl mx-auto">
+    <div class="max-w-screen-xl mx-auto h-screen grid grid-rows-layout">
       <!-- header -->
-      <header class="px-2 border-b flex items-center justify-between">
-        <a class="uppercase font-bold text-purple-800" href="#">cityRealty</a>
-        <nav class="flex items-center">
+      <header class="px-2 border-b flex items-center justify-between h-14">
+        <a class="dark:text-purple-500 uppercase font-bold text-logo-main" href="#">cityRealty</a>
+        <nav class="hidden md:flex items-center">
           <ul class="flex items-center">
             <li><a class="header-link" href="#">Home</a></li>
             <li><a class="header-link" href="#">About</a></li>
@@ -23,171 +23,238 @@
             <li><button class="header-btn">Register</button></li>
           </ul>
         </nav>
+        <button class="inline-block md:hidden">
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
+          </svg>
+        </button>
       </header>
 
-      <!-- breadcrumps -->
-      <div class="px-2 flex items-center">
-        <div class="py-4 overflow-y-auto whitespace-nowrap flex items-center">
-          <a class="text-gray-600 hover:text-gray-900" href="#"
-            ><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-5 h-5">
-              <path
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                d="M2.25 12l8.954-8.955c.44-.439 1.152-.439 1.591 0L21.75 12M4.5 9.75v10.125c0 .621.504 1.125 1.125 1.125H9.75v-4.875c0-.621.504-1.125 1.125-1.125h2.25c.621 0 1.125.504 1.125 1.125V21h4.125c.621 0 1.125-.504 1.125-1.125V9.75M8.25 21h8.25" />
-            </svg>
-          </a>
-          <span class="mx-2 text-gray-300"
-            ><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-5 h-5">
-              <path stroke-linecap="round" stroke-linejoin="round" d="M8.25 4.5l7.5 7.5-7.5 7.5" />
-            </svg>
-          </span>
-          <a class="text-gray-600 hover:text-gray-900" href="#">News</a>
-          <span class="mx-2 text-gray-300"
-            ><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-5 h-5">
-              <path stroke-linecap="round" stroke-linejoin="round" d="M8.25 4.5l7.5 7.5-7.5 7.5" />
-            </svg>
-          </span>
-          <a class="text-gray-600 hover:text-gray-900" href="#">Tech</a>
+      <div>
+        <!-- breadcrumps -->
+        <div class="px-2 flex items-center">
+          <div class="py-4 overflow-y-auto whitespace-nowrap flex items-center">
+            <a class="dark:text-slate-400 text-gray-600 hover:text-gray-900 transition-all duration-300" href="#"
+              ><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-5 h-5">
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  d="M2.25 12l8.954-8.955c.44-.439 1.152-.439 1.591 0L21.75 12M4.5 9.75v10.125c0 .621.504 1.125 1.125 1.125H9.75v-4.875c0-.621.504-1.125 1.125-1.125h2.25c.621 0 1.125.504 1.125 1.125V21h4.125c.621 0 1.125-.504 1.125-1.125V9.75M8.25 21h8.25" />
+              </svg>
+            </a>
+            <span class="mx-2 text-gray-300"
+              ><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-5 h-5">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M8.25 4.5l7.5 7.5-7.5 7.5" />
+              </svg>
+            </span>
+            <a class="dark:text-slate-400 text-gray-600 hover:text-gray-900 transition-all duration-300" href="#">News</a>
+            <span class="mx-2 text-gray-300"
+              ><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-5 h-5">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M8.25 4.5l7.5 7.5-7.5 7.5" />
+              </svg>
+            </span>
+            <a class="dark:text-slate-400 text-gray-600 hover:text-gray-900 transition-all duration-300" href="#">Tech</a>
+          </div>
         </div>
+
+        <!-- banners -->
+        <section class="px-2 lg:flex lg:space-x-2">
+          <a class="w-full lg:w-2/3 bg-gradient-to-r bg-purple-300 h-96 mb-4 relative rounded inline-block overflow-hidden" href="#">
+            <!-- подложка (с градиентом) для картинки -->
+            <div class="absolute left-0 top-0 w-full h-full z-10 bg-gradient-to-b from-black/10 to-black/70"></div>
+            <img class="absolute left-0 top-0 w-full h-full z-0 object-cover" src="./public/images/2.jpg" alt="news" />
+
+            <div class="p-4 absolute bottom-0 left-0 z-20">
+              <h2 class="text-4xl font-semibold text-gray-100 leading-tight">Lorem ipsum dolor sit amet consectetur adipisicing elit. Pariatur, earum?</h2>
+
+              <span class="bg-gradient-to-bl from-blue-600 to-indigo-600 text-white inline-flex items-center justify-center px-4 py-1 mb-2">React</span>
+              <!-- author -->
+              <div class="flex mt-3">
+                <img class="h-10 w-10 rounded-full mr-2 object-cover" src="https://randomuser.me/api/portraits/men/18.jpg" alt="author" />
+                <div>
+                  <p class="font-semibold text-gray-200 text-sm">John Doe</p>
+                  <time class="text-gray-400 text-xs">17 September</time>
+                </div>
+              </div>
+            </div>
+          </a>
+
+          <a class="w-full lg:w-1/3 bg-indigo-300 h-96 mb-4 relative rounded inline-block overflow-hidden" href="#">
+            <!-- подложка (с градиентом) для картинки -->
+            <div class="absolute left-0 top-0 w-full h-full z-10 bg-gradient-to-b from-black/10 to-black/70"></div>
+            <img class="absolute left-0 top-0 w-full h-full z-0 object-cover" src="./public/images/3.jpeg" alt="monitors" />
+
+            <div class="p-4 absolute bottom-0 left-0 z-20">
+              <h2 class="text-4xl font-semibold text-gray-100 leading-tight">Pariatur met consectetur adipisicing elit. Pariaturmet consectetur adipisicing elit.,,</h2>
+              <span class="bg-gradient-to-bl from-blue-600 to-indigo-600 text-white inline-flex items-center justify-center px-4 py-1 mb-2">Angular</span>
+
+              <!-- author -->
+              <div class="flex mt-3">
+                <img class="h-10 w-10 rounded-full mr-2 object-cover" src="https://randomuser.me/api/portraits/men/44.jpg" alt="author" />
+                <div>
+                  <p class="font-semibold text-gray-200 text-sm">Eugen Miro</p>
+                  <time class="text-gray-400 text-xs">17 September</time>
+                </div>
+              </div>
+            </div>
+          </a>
+        </section>
+
+        <main class="lg:flex">
+          <div class="w-full lg:w-2/3">
+            <!-- post cards -->
+            <section class="px-2">
+              <a class="block w-full lg:flex mb-10" href="#">
+                <img class="w-full h-48 lg:w-48 opacity-80 object-cover lg:mr-4" src="./public/images/4.jpg" alt="monit" />
+
+                <div class="flex flex-col justify-between">
+                  <div>
+                    <h3 class="dark:text-white mb-2 text-gray-700 font-bold text-2xl">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nihil, iste.</h3>
+                    <p class="text-gray-700 dark:text-slate-400">
+                      Lorem ipsum dolor sit, amet consectetur adipisicing elit. Tempora autem veniam hic temporibus tenetur! Harum illum repudiandae autem, assumenda voluptates quisquam libero alias nulla fugiat, deleniti veniam ut magni repellat ea
+                      sunt est facere. Reprehenderit magnam laborum, culpa, consequatur cumque reprepellendus asperioresellendus asperiores, quibusdam harum ullam esse non inventore ad tenetur voluptatibus deleniti nesciunt similique pariatur placeat
+                      saepe unde consequuntur et?
+                    </p>
+                  </div>
+                  <!-- author -->
+                  <div class="flex mt-3">
+                    <img class="h-10 w-10 rounded-full mr-2 object-cover" src="https://randomuser.me/api/portraits/men/11.jpg" alt="author" />
+                    <div>
+                      <p class="font-semibold text-gray-400 text-sm">Viktor Gugoe</p>
+                      <time class="text-gray-400 text-xs">17 September</time>
+                    </div>
+                  </div>
+                </div>
+              </a>
+
+              <a class="block w-full lg:flex mb-10" href="#">
+                <img class="w-full h-48 lg:w-48 opacity-80 object-cover lg:mr-4" src="./public/images/5.jpg" alt="monit" />
+                <div class="flex flex-col justify-between">
+                  <div>
+                    <h3 class="dark:text-white mb-2 text-gray-700 font-bold text-2xl">Endus asperioresrem ipsum dolor sit amet, consectetur adipisicing elit. Nihil, iste.</h3>
+                    <p class="text-gray-700 dark:text-slate-400">
+                      Lorem ipsum dolor sit, amet consectetur adipisicing elit. Temporrepellendus asperioresrepellendus asperioresrepellendus asperioresrepellendus asperioresrepellendus asperioresa autem veniam hic temporibus tenetur! Harum illum
+                      repudiandae autem, assumenda voluptates quisquam libero alias nulla fugiat, deleniti veniam ut magni repellat ea sunt est facere. Reprehenderit magnam laborum, culpa, consequatur cumque repellendus asperiores, quibusdam harum
+                      ullam esse non inventore ad tenetur voluptatibus deleniti nesciunt similique pariatur placeat saepe unde consequuntur et?
+                    </p>
+                  </div>
+                  <!-- author -->
+                  <div class="flex mt-3">
+                    <img class="h-10 w-10 rounded-full mr-2 object-cover" src="https://randomuser.me/api/portraits/men/33.jpg" alt="author" />
+                    <div>
+                      <p class="font-semibold text-gray-400 text-sm">Vohn MDoe</p>
+                      <time class="text-gray-400 text-xs">29 September</time>
+                    </div>
+                  </div>
+                </div>
+              </a>
+
+              <a class="block w-full lg:flex mb-10" href="#">
+                <img class="w-full h-48 lg:w-48 opacity-80 object-cover lg:mr-4" src="./public/images/6.jpeg" alt="monit" />
+                <div class="flex flex-col justify-between">
+                  <div>
+                    <h3 class="dark:text-white mb-2 text-gray-700 font-bold text-2xl">Consectetur adipisicingLorem ipsum dolor sit amet, consectetur adipisicing elit. Nihil, iste.</h3>
+                    <p class="text-gray-700 dark:text-slate-400">
+                      Lorem ipsum dolor sit, amet consectetur adipisicing elit. Tempora autem veniam hic temporibus tenetur! HaruLOm Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ullam vitae a repellat incidunt autem voluptatibus quod
+                      necessitatibus dolore pariatur debitis placeat molestias aspernatur distinctio iure eligendi nam optio, aliquid soluta! illum repudiandae autem, assumenda voluptates quisquam libero alias nulla fugiat, deleniti veniam ut magni
+                      repellat ea sunt est facere. Reprehenderit magnam laborum, culpa, consequatur cumque repellendus asperiores, quibusdam harum ullam esse non inventore ad tenetur voluptatibus deleniti nesciunt similique pariatur placeat saepe
+                      unde consequuntur et?
+                    </p>
+                  </div>
+                  <!-- author -->
+                  <div class="flex mt-3">
+                    <img class="h-10 w-10 rounded-full mr-2 object-cover" src="https://randomuser.me/api/portraits/men/20.jpg" alt="author" />
+                    <div>
+                      <p class="font-semibold text-gray-400 text-sm">John Doe</p>
+                      <time class="text-gray-400 text-xs">12 September</time>
+                    </div>
+                  </div>
+                </div>
+              </a>
+            </section>
+
+            <!-- pagination -->
+            <div class="mt-20 mb-10">
+              <ul class="flex justify-center">
+                <li><a class="pagination-item rounded-l-lg" href="#">Previos</a></li>
+                <li><a class="pagination-item" href="#">1</a></li>
+                <li><a class="pagination-item" href="#" href="#">2</a></li>
+                <li><a class="pagination-item text-blue-600 hover:bg-blue-100 hover:text-blue-600 transition-all duration-300" href="#" href="#">3</a></li>
+                <li><a class="pagination-item" href="#" href="#">4</a></li>
+                <li><a class="pagination-item" href="#" href="#">5</a></li>
+                <li><a class="pagination-item rounded-r-lg" href="#" href="#">Next</a></li>
+              </ul>
+            </div>
+          </div>
+          <!--  -->
+          <div class="w-full lg:w-1/3 px-2 md:flex md:space-x-6 lg:block lg:space-x-0">
+            <!-- topics -->
+            <div class="w-full md:w-1/2 lg:w-full mb-5">
+              <h5 class="dark:text-white font-bold text-lg uppercase text-gray-700 mb-2">Popular News</h5>
+              <ul>
+                <li class="dark:border-transparent dark:hover:border-gray-200 px-1 py-4 border-y border-white hover:border-gray-200 transition-all duration-300">
+                  <a class="dark:text-slate-400 flex items-center text-gray-600" href="#">
+                    <span class="inline-block w-4 h-4 mr-3 bg-gradient-to-tr from-green-500 to-green-700"></span>
+                    Vue
+                    <span class="dark:text-slate-400 text-gray-500 ml-auto">23 articles</span>
+                  </a>
+                </li>
+                <li class="dark:border-transparent dark:hover:border-gray-200 px-1 py-4 border-y border-white hover:border-gray-200 transition-all duration-300">
+                  <a class="dark:text-slate-400 flex items-center text-gray-600" href="#">
+                    <span class="inline-block w-4 h-4 mr-3 bg-gradient-to-tr from-orange-500 to-orange-700"></span>
+                    Svelte
+                    <span class="dark:text-slate-400 text-gray-500 ml-auto">19 articles</span>
+                  </a>
+                </li>
+                <li class="dark:border-transparent dark:hover:border-gray-200 px-1 py-4 border-y border-white hover:border-gray-200 transition-all duration-300">
+                  <a class="dark:text-slate-400 flex items-center text-gray-600" href="#">
+                    <span class="inline-block w-4 h-4 mr-3 bg-gradient-to-tr from-yellow-500 to-yellow-700"></span>
+                    JavaScript
+                    <span class="dark:text-slate-400 text-gray-500 ml-auto">15 articles</span>
+                  </a>
+                </li>
+                <li class="dark:border-transparent dark:hover:border-gray-200 px-1 py-4 border-y border-white hover:border-gray-200 transition-all duration-300">
+                  <a class="dark:text-slate-400 flex items-center text-gray-600" href="#">
+                    <span class="inline-block w-4 h-4 mr-3 bg-gradient-to-tr from-blue-500 to-blue-700"></span>
+                    React
+                    <span class="dark:text-slate-400 text-gray-500 ml-auto">15 articles</span>
+                  </a>
+                </li>
+              </ul>
+            </div>
+
+            <div class="w-full md:w-1/2 lg:w-full">
+              <!-- divider -->
+              <div class="border border-dotted md:hidden lg:block"></div>
+              <!-- subscribe -->
+              <div class="my-5 md:my-0 lg:my-5">
+                <h5 class="dark:text-white font-bold text-lg uppercase text-gray-700 mb-2">Subscribe</h5>
+                <p class="dark:text-slate-400 text-gray-600 mb-4">Subscribe to our newsletter.</p>
+                <input placeholder="your email address" type="email" class="text-gray-700 bg-gray-100 p-2 w-full border rounded-t hover:border-gray-600 transition-all duration-300" />
+
+                <button class="px-4 py-2 bg-indigo-600 text-white rounded-b w-full hover:bg-indigo-800 transition-all duration-300">Subscribe</button>
+              </div>
+
+              <!-- divider -->
+              <div class="border border-dotted md:hidden lg:block"></div>
+            </div>
+          </div>
+        </main>
       </div>
 
-      <!-- banners -->
-      <section class="px-2 flex space-x-2">
-        <a class="w-2/3 bg-gradient-to-r bg-purple-300 h-96 mb-4 relative rounded inline-block overflow-hidden" href="#">
-          <div class="p-4 absolute bottom-0 left-0 z-20">
-            <h2 class="text-4xl font-semibold text-gray-100 leading-tight">Lorem ipsum dolor sit amet consectetur adipisicing elit. Pariatur, earum?</h2>
-          </div>
-        </a>
-
-        <a class="w-1/3 bg-indigo-300 h-96 mb-4 relative rounded inline-block overflow-hidden" href="#">
-          <div class="p-4 absolute bottom-0 left-0 z-20">
-            <h2 class="text-4xl font-semibold text-gray-100 leading-tight">Pariatur met consectetur adipisicing elit. Pariaturmet consectetur adipisicing elit.,,</h2>
-          </div>
-        </a>
-      </section>
-      <main class="flex">
-        <div class="w-2/3">
-          <!-- post cards -->
-          <section class="px-2">
-            <a class="block mb-10" href="#">
-              <div class="flex">
-                <div>
-                  <h3 class="mt-3 mb-2 text-gray-700 font-bold text-2xl">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nihil, iste.</h3>
-                  <p class="text-gray-700">
-                    Lorem ipsum dolor sit, amet consectetur adipisicing elit. Tempora autem veniam hic temporibus tenetur! Harum illum repudiandae autem, assumenda voluptates quisquam libero alias nulla fugiat, deleniti veniam ut magni repellat ea
-                    sunt est facere. Reprehenderit magnam laborum, culpa, consequatur cumque reprepellendus asperioresellendus asperiores, quibusdam harum ullam esse non inventore ad tenetur voluptatibus deleniti nesciunt similique pariatur placeat
-                    saepe unde consequuntur et?
-                  </p>
-                </div>
-              </div>
-            </a>
-
-            <a class="block mb-10" href="#">
-              <div class="flex">
-                <div>
-                  <h3 class="mt-3 mb-2 text-gray-700 font-bold text-2xl">Endus asperioresrem ipsum dolor sit amet, consectetur adipisicing elit. Nihil, iste.</h3>
-                  <p class="text-gray-700">
-                    Lorem ipsum dolor sit, amet consectetur adipisicing elit. Temporrepellendus asperioresrepellendus asperioresrepellendus asperioresrepellendus asperioresrepellendus asperioresa autem veniam hic temporibus tenetur! Harum illum
-                    repudiandae autem, assumenda voluptates quisquam libero alias nulla fugiat, deleniti veniam ut magni repellat ea sunt est facere. Reprehenderit magnam laborum, culpa, consequatur cumque repellendus asperiores, quibusdam harum
-                    ullam esse non inventore ad tenetur voluptatibus deleniti nesciunt similique pariatur placeat saepe unde consequuntur et?
-                  </p>
-                </div>
-              </div>
-            </a>
-
-            <a class="block mb-10" href="#">
-              <div class="flex">
-                <div>
-                  <h3 class="mt-3 mb-2 text-gray-700 font-bold text-2xl">Consectetur adipisicingLorem ipsum dolor sit amet, consectetur adipisicing elit. Nihil, iste.</h3>
-                  <p class="text-gray-700">
-                    Lorem ipsum dolor sit, amet consectetur adipisicing elit. Tempora autem veniam hic temporibus tenetur! HaruLOm Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ullam vitae a repellat incidunt autem voluptatibus quod
-                    necessitatibus dolore pariatur debitis placeat molestias aspernatur distinctio iure eligendi nam optio, aliquid soluta! illum repudiandae autem, assumenda voluptates quisquam libero alias nulla fugiat, deleniti veniam ut magni
-                    repellat ea sunt est facere. Reprehenderit magnam laborum, culpa, consequatur cumque repellendus asperiores, quibusdam harum ullam esse non inventore ad tenetur voluptatibus deleniti nesciunt similique pariatur placeat saepe unde
-                    consequuntur et?
-                  </p>
-                </div>
-              </div>
-            </a>
-          </section>
-
-          <!-- pagination -->
-          <div class="mt-20 mb-10">
-            <ul class="flex justify-center">
-              <li><a class="pagination-item rounded-l-lg" href="#">Previos</a></li>
-              <li><a class="pagination-item" href="#">1</a></li>
-              <li><a class="pagination-item" href="#" href="#">2</a></li>
-              <li><a class="pagination-item text-blue-600 hover:bg-blue-100 hover:text-blue-600" href="#" href="#">3</a></li>
-              <li><a class="pagination-item" href="#" href="#">4</a></li>
-              <li><a class="pagination-item" href="#" href="#">5</a></li>
-              <li><a class="pagination-item rounded-r-lg" href="#" href="#">Next</a></li>
-            </ul>
-          </div>
-        </div>
-        <!--  -->
-        <div class="w-1/3 px-2">
-          <!-- topics -->
-          <div class="mb-5">
-            <h5 class="font-bold text-lg uppercase text-gray-700 mb-2">Popular News</h5>
-            <ul>
-              <li class="px-1 py-4 border-y border-white hover:border-gray-200">
-                <a class="flex items-center text-gray-600" href="#">
-                  <span class="inline-block w-4 h-4 mr-3 bg-gradient-to-tr from-green-500 to-green-700"></span>
-                  Vue
-                  <span class="text-gray-500 ml-auto">23 articles</span>
-                </a>
-              </li>
-              <li class="px-1 py-4 border-y border-white hover:border-gray-200">
-                <a class="flex items-center text-gray-600" href="#">
-                  <span class="inline-block w-4 h-4 mr-3 bg-gradient-to-tr from-orange-500 to-orange-700"></span>
-                  Svelte
-                  <span class="text-gray-500 ml-auto">19 articles</span>
-                </a>
-              </li>
-              <li class="px-1 py-4 border-y border-white hover:border-gray-200">
-                <a class="flex items-center text-gray-600" href="#">
-                  <span class="inline-block w-4 h-4 mr-3 bg-gradient-to-tr from-yellow-500 to-yellow-700"></span>
-                  JavaScript
-                  <span class="text-gray-500 ml-auto">15 articles</span>
-                </a>
-              </li>
-              <li class="px-1 py-4 border-y border-white hover:border-gray-200">
-                <a class="flex items-center text-gray-600" href="#">
-                  <span class="inline-block w-4 h-4 mr-3 bg-gradient-to-tr from-blue-500 to-blue-700"></span>
-                  React
-                  <span class="text-gray-500 ml-auto">15 articles</span>
-                </a>
-              </li>
-            </ul>
-          </div>
-
-          <!-- divider -->
-          <div class="border border-dotted"></div>
-          <!-- subscribe -->
-          <div class="my-5">
-            <h5 class="font-bold text-lg uppercase text-gray-700 mb-2">Subscribe</h5>
-            <p class="text-gray-600 mb-4">Subscribe to our newsletter.</p>
-            <input placeholder="your email address" type="email" class="text-gray-700 bg-gray-100 p-2 w-full border rounded-t hover:border-gray-600" />
-
-            <button class="px-4 py-2 bg-indigo-600 text-white rounded-b w-full hover:bg-indigo-800">Subscribe</button>
-          </div>
-
-          <!-- divider -->
-          <div class="border border-dotted"></div>
-        </div>
-      </main>
       <!-- footer -->
       <footer class="border-t mt-10 py-10 px-2">
-        <div class="flex">
-          <div class="mb-5 w-2/5">
-            <h6 class="font-semibold text-gray-700 mb-4">Company</h6>
+        <div class="md:flex">
+          <div class="w-full mb-5 md:w-2/5">
+            <h6 class="dark:text-white font-semibold text-gray-700 mb-4">Company</h6>
             <ul>
               <li><a class="footer-link" href="#">Team</a></li>
               <li><a class="footer-link" href="#">About Us</a></li>
             </ul>
           </div>
 
-          <div class="w-2/5">
-            <h6 class="font-semibold text-gray-700 mb-3">Content</h6>
+          <div class="w-full md:w-2/5">
+            <h6 class="dark:text-white font-semibold text-gray-700 mb-3">Content</h6>
             <ul>
               <li><a class="footer-link" href="#">Block</a></li>
               <li><a class="footer-link" href="#">Policy</a></li>
@@ -195,8 +262,8 @@
             </ul>
           </div>
 
-          <div class="w-1/5">
-            <h6 class="font-semibold text-gray-700 mb-3">Contact Us</h6>
+          <div class="w-full md:w-1/5">
+            <h6 class="dark:text-white font-semibold text-gray-700 mb-3">Contact Us</h6>
             <ul class="flex">
               <li class="mr-2">
                 <a class="footer-link" href="#"
